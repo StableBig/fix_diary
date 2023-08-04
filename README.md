@@ -37,7 +37,7 @@ python3 manage.py shell
 В интерактивной консоли выполните следующие команды:
 
 ```bash
->>> from scripts.fix_diary import main
+>>> from fix_diary import main
 >>> main("Имя ученика", "Название предмета")
 ```
 
@@ -50,14 +50,14 @@ python3 manage.py shell
 Неверно:
 
 ```bash
->>> from scripts.fix_diary import main
+>>> from fix_diary import main
 >>> main("фролов иван геннадьевич", "математика")
 ```
 
 Верно:
 
 ```bash
->>> from scripts.fix_diary import main
+>>> from fix_diary import main
 >>> main("Фролов Иван Геннадьевич", "Математика")
 ```
 
@@ -68,14 +68,14 @@ python3 manage.py shell
 Неверно:
 
 ```bash
->>> from scripts.fix_diary import main
+>>> from fix_diary import main
 >>> main("Феофан Владленович Голубев", "искусство Изобразительное")
 ```
 
 Верно:
 
 ```bash
->>> from scripts.fix_diary import main
+>>> from fix_diary import main
 >>> main("Голубев Феофан Владленович", "Изобразительное искусство")
 ```
 
