@@ -1,5 +1,5 @@
 from random import choice
-from datacenter.models import Schoolkid, Mark, Chastisement, Commendation, Lesson
+from datacenter.models import Schoolkid, Mark, Chastisement, Commendation, Lesson, Subject
 
 
 commendation_texts = [
@@ -53,7 +53,8 @@ def create_commendation(schoolkid, subject_title):
                                    group_letter=schoolkid.group_letter,
                                    subject__title=subject_title).order_by('-date').first()
     if lesson is None:
-        return f"Уроки по предмету {subject_title} не найдены"
+        print(f"Уроки по предмету {subject_title} не найдены")
+        return
 
     commendation_text = choice(commendation_texts)
     Commendation.objects.create(text=commendation_text,
