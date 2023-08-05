@@ -2,7 +2,7 @@ from random import choice
 from datacenter.models import Schoolkid, Mark, Chastisement, Commendation, Lesson, Subject
 
 
-commendation_texts = [
+COMMENDATION_TEXTS = [
     "Молодец!",
     "Отлично!",
     "Хорошо!",
@@ -56,7 +56,7 @@ def create_commendation(schoolkid, subject_title):
         print(f"Уроки по предмету {subject_title} не найдены")
         return
 
-    commendation_text = choice(commendation_texts)
+    commendation_text = choice(COMMENDATION_TEXTS)
     Commendation.objects.create(text=commendation_text,
                                 created=lesson.date,
                                 schoolkid=schoolkid,
