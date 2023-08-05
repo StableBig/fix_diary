@@ -37,10 +37,8 @@ COMMENDATION_TEXTS = [
 
 
 def fix_marks(schoolkid):
-    bad_marks = Mark.objects.filter(schoolkid=schoolkid, points__in=[2, 3])
-    for mark in bad_marks:
-        mark.points = choice([4, 5])
-        mark.save()
+    Mark.objects.filter(schoolkid=schoolkid, points=2).update(points=4)
+    Mark.objects.filter(schoolkid=schoolkid, points=3).update(points=5)
 
 
 def remove_chastisements(schoolkid):
